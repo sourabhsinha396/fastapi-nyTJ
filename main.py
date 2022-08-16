@@ -7,8 +7,8 @@ import random
 app = FastAPI()
 
 @app.get("/")
-def home():
-    return {"Hello": "World from FastAPI"}
+def read_index():
+    return {"message":"append any city name to the url after / e.g. www.url.com/pune"}
 
 # get random number between min(default:0) and max(default:9)
 @app.get("/random/")
