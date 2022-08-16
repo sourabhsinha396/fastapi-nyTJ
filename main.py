@@ -13,10 +13,9 @@ def read_index():
 @app.get("/{city}")
 def read_root(city:str):
     try:
-        token = os.getenv("openweather_token")
-        response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={token}")
-        print(response.json())
-        return response.json().get('weather')[0]["main"]
+        import random
+        lis = ["cloudy","clear sky","hazy","rainy",]
+        return {f"the weather of {city} looks":random.choice(lis)}
     except:
         return {"message":"Please enter valid city name"}
 
